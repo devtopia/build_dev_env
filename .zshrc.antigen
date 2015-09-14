@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+source ~/.zsh/antigen/antigen.zsh
+
+# Additional completion definitions for Zsh
+antigen bundle zsh-users/zsh-completions
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# anyframe
+antigen bundle mollifier/anyframe
+
+# Tell antigen that you're done.
+antigen apply
