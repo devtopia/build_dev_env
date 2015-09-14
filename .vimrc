@@ -807,3 +807,12 @@ hi colorcolumn ctermbg=235
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=254
 " hi colorcolumn ctermbg=253
 execute "set colorcolumn=" . join(range(81, 81), ',')
+
+" buffer
+nmap <silent>bp :bprevious<CR>
+nmap <silent>bn :bnext<CR>
+nmap <silent>bb :b#<CR>
+nmap <silent>bf :bf<CR>
+nmap <silent>bl :bl<CR>
+nmap <silent>bm :bm<CR>
+nmap <silent>bd :bdelete<CR>
