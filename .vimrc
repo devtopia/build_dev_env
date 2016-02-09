@@ -47,6 +47,7 @@ let g:vimfiler_safe_mode_by_default = 0 " セーフモードを無効化する
 " Unite
 " ------------------------------------------------------------------------------
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neoyank.vim'
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
@@ -90,8 +91,10 @@ NeoBundle 'scrooloose/syntastic'
 let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
-let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': ['ruby']}
+let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': ['ruby', 'javascript', 'coffeelint']}
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_coffee_checkers = ['coffeelint']
 autocmd FileType ruby if exists('b:rails_root') |
   \ let b:syntastic_ruby_rubocop_options = '--rails' | endif
 NeoBundle 'scrooloose/nerdtree'
@@ -605,7 +608,9 @@ NeoBundle 'depuracao/vim-rdoc'
 " javascript
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'kchmck/vim-coffee-script'
+map <silent> cf :CoffeeWatch vert<CR>
 NeoBundle 'JavaScript-Indent'
+autocmd BufRead,BufNewFile *.ejs set filetype=html
 
 " css
 NeoBundle 'JulesWang/css.vim'
